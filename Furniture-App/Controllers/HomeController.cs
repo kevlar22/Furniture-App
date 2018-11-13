@@ -34,6 +34,27 @@ namespace Furniture_App.Controllers
             return View();
         }
 
+        public IActionResult Signup_login()
+        {
+            ViewData["Message"] = "This is where you will sign-up and login.";
+
+            return View();
+        }
+
+        public IActionResult Items()
+        {
+            ViewData["Message"] = "this is where you will select some items.";
+
+            return View();
+        }
+
+        public IActionResult Profile()
+        {
+            ViewData["Message"] = "This is where your prifle will be after sign-up/login.";
+
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
