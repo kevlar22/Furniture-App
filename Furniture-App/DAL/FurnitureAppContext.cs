@@ -7,7 +7,7 @@ namespace FurnitureApp.DAL
     public class FurnitureAppContext: DbContext
     {
 
-        public FurnitureAppContext(): base("Server=tcp:uncc.database.windows.net,1433;Initial Catalog=Moving_App;Persist Security Info=False;User ID={kparso12};Password={Sugarrush1};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
+        public FurnitureAppContext(): base("Server=tcp:uncc.database.windows.net,1433;Initial Catalog=Moving_App;Persist Security Info=False;Database=uncc.Moving_App.dbo;User ID=kparso12;Password=Sugarrush1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
         {
         }
 

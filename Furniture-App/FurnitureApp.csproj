@@ -12,7 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Pages\" />
+    <Folder Include="KEV\" />
+    <Folder Include="Views\Home\Pages\Students\" />
   </ItemGroup>
 
 </Project>

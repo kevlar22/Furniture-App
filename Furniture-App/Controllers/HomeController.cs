@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Furniture_App.Models;
+using FurnitureApp.Models;
+using FurnitureApp.DAL;
 
 namespace Furniture_App.Controllers
 {
@@ -52,6 +54,23 @@ namespace Furniture_App.Controllers
         {
             ViewData["Message"] = "This is where your prifle will be after sign-up/login.";
 
+            using(var db = new FurnitureAppContext())
+            {
+                db.Users.Add(new User
+                {
+                    userID = 69,
+                    userName = "kevin",
+                    firstName = "kev",
+                    lastName = "parshneasy"
+                });
+                db.SaveChanges();
+
+                var users = (from u in db.Users
+                             orderby u.userID
+                             select u).ToList();
+                ViewData["Message"] = users.ToString();
+            }
+
             return View();
         }
 
@@ -60,5 +79,7 @@ namespace Furniture_App.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        
     }
 }
